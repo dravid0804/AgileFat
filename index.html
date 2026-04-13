@@ -1,29 +1,61 @@
-<div class="tradingview-widget-container" style="height: 500px; width: 100%">
-  <div id="tradingview_gold_chart"></div>
-  <div class="tradingview-widget-copyright">
-    <a
-      href="https://www.tradingview.com/symbols/TVC-GOLD/"
-      rel="noopener"
-      target="_blank"
-    >
-      <span class="blue-text">Gold Quotes</span>
-    </a>
-    by TradingView
-  </div>
-  <script type="text/javascript" src="https://tradingview.com"></script>
-  <script type="text/javascript">
-    new TradingView.widget({
-      autosize: true,
-      symbol: "TVC:GOLD",
-      interval: "D",
-      timezone: "Etc/UTC",
-      theme: "light",
-      style: "3", // Area chart style for smooth visualization
-      locale: "en",
-      toolbar_bg: "#f1f3f6",
-      enable_publishing: false,
-      allow_symbol_change: true,
-      container_id: "tradingview_gold_chart",
-    });
-  </script>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gold Rate - 1 Year Statistics</title>
+    <!-- Loading Chart.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div style="width: 80%; margin: auto">
+      <h2>Gold Rate Statistics (Last 12 Months)</h2>
+      <canvas id="goldChart"></canvas>
+    </div>
+
+    <script>
+      const ctx = document.getElementById("goldChart").getContext("2d");
+      const goldChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+            "Jan",
+            "Feb",
+            "Mar",
+          ],
+          datasets: [
+            {
+              label: "Price (per 10g in ₹)",
+              // Example historical data for demonstration
+              data: [
+                60000, 61500, 59800, 62000, 63400, 65000, 68000, 71000, 75000,
+                135000, 145000, 146850,
+              ],
+              borderColor: "gold",
+              backgroundColor: "rgba(255, 215, 0, 0.2)",
+              fill: true,
+              tension: 0.3,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: false,
+              title: { display: true, text: "Price in Currency" },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
