@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: html-demo0
+  name: html-demo
 
 spec:
   replicas: 2
 
   selector:
     matchLabels:
-      app: html-demo0
+      app: html-demo
 
   template:
     metadata:
       labels:
-        app: html-demo0
+        app: html-demo
 
     spec:
       containers:
-        - name: html-demo0
+        - name: html-demo
           image: 23mis0036/html-demo0:latest
           ports:
             - containerPort: 80
