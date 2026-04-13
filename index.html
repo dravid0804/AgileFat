@@ -1,0 +1,29 @@
+<div class="tradingview-widget-container" style="height: 500px; width: 100%">
+  <div id="tradingview_gold_chart"></div>
+  <div class="tradingview-widget-copyright">
+    <a
+      href="https://www.tradingview.com/symbols/TVC-GOLD/"
+      rel="noopener"
+      target="_blank"
+    >
+      <span class="blue-text">Gold Quotes</span>
+    </a>
+    by TradingView
+  </div>
+  <script type="text/javascript" src="https://tradingview.com"></script>
+  <script type="text/javascript">
+    new TradingView.widget({
+      autosize: true,
+      symbol: "TVC:GOLD",
+      interval: "D",
+      timezone: "Etc/UTC",
+      theme: "light",
+      style: "3", // Area chart style for smooth visualization
+      locale: "en",
+      toolbar_bg: "#f1f3f6",
+      enable_publishing: false,
+      allow_symbol_change: true,
+      container_id: "tradingview_gold_chart",
+    });
+  </script>
+</div>
